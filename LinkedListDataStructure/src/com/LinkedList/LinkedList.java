@@ -28,29 +28,40 @@ public class LinkedList {
 			this.head.setNext(tempNode);
 		}
 	}
-	
+
 	public void append(Node node) {
-		if(this.head == null) {
+		if (this.head == null) {
 			this.head = node;
 		}
-		if(this.tail == null) {
+		if (this.tail == null) {
 			this.tail = node;
-		}
-		else {
+		} else {
 			this.tail.setNext(node);
 			this.tail = node;
 		}
 	}
-	
+
 	public void insert(Node node, Node newNode) {
 		Node tempNode = node.getNext();
 		node.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
-	
+
+	public Node pop() {
+		Node tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
+	}
+
 	public void print() {
-		System.out.println(head.data);
-		System.out.println(head.next.data);
-		System.out.println(head.next.next.data);
+		if (head != null) {
+			System.out.println(head.data);
+		}
+		if (head.next != null) {
+			System.out.println(head.next.data);
+		}
+		if (head.next.next != null) {
+			System.out.println(head.next.next.data);
+		}
 	}
 }
