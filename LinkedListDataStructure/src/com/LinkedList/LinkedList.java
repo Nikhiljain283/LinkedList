@@ -42,6 +42,12 @@ public class LinkedList {
 		}
 	}
 	
+	public void insert(Node node, Node newNode) {
+		Node tempNode = node.getNext();
+		node.setNext(newNode);
+		newNode.setNext(tempNode);
+	}
+	
 	public void print() {
 		System.out.println(head.data);
 		System.out.println(head.next.data);
